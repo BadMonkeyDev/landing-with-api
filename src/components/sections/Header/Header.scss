@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+.app-header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: $white;
+  & .actions {
+    display: flex;
+    gap: 10px;
+  }
+  .container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

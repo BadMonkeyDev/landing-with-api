@@ -1,0 +1,21 @@
+@import "../../../../assets/styles/variables";
+
+.upload-text {
+  height: inherit;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  padding: 14px 16px;
+  width: 100%;
+  border: 1px solid $grey;
+  border-left: none;
+  color: $text-gray;
+  border-radius: 0 4px 4px 0;
+  &.error {
+    border-color: $red;
+    box-shadow: inset 0 0 0 1px $red;
+  }
+  &.attached {
+    color: $black;
+  }
+}

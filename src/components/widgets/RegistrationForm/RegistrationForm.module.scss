@@ -1,0 +1,21 @@
+h2, .text-h1 {
+  text-align: center;
+}
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  .formInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .formFileUpload {
+    margin-top: 47px;
+  }
+  .formButton {
+    margin-top: 26px;
+    align-self: center;
+  }
+}

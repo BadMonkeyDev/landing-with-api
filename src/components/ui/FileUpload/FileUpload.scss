@@ -1,0 +1,14 @@
+@import "../../../assets/styles/variables";
+
+.file-upload {
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.error-message {
+  min-height: 20px;
+  padding-left: 16px;
+  padding-top: 4px;
+  color: $red;
+}

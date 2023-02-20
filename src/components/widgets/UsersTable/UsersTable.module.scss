@@ -1,0 +1,18 @@
+@import "./src/assets/styles/variables";
+
+.userCards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 29px;
+  }
+}

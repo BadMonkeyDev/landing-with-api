@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef} from 'react';
+import './App.scss';
+
+import {UserProvider} from "./store/UsersContext";
+
+import {ThemeProvider} from '@mui/material/styles';
+import {muiTheme} from "./muiTheme";
+
+import Header from "./components/sections/Header/Header";
+import HeroSection from "./components/sections/HeroSection/HeroSection";
+import UsersSection from "./components/sections/UsersSection/UsersSection";
+import RegistrationSection from "./components/sections/RegistrationSection/RegistrationSection";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const usersBlockRef = useRef<HTMLDivElement>(null);
+    const signupBlockRef = useRef<HTMLDivElement>(null);
+    return (
+        <ThemeProvider theme={muiTheme}>
+            <UserProvider>
+                <div className="App">
+                    <Header usersRef={usersBlockRef} signupRef={signupBlockRef} />
+                    <div className="content">
+                        <HeroSection signupRef={signupBlockRef} />
+                        <UsersSection ref={usersBlockRef} />
+                        <RegistrationSection ref={signupBlockRef} />
+                    </div>
+                </div>
+            </UserProvider>
+        </ThemeProvider>
+    );
 }
 
 export default App;

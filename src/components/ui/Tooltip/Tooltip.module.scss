@@ -1,0 +1,35 @@
+.tooltipTextContainer {
+  position: relative;
+  width: 100%;
+}
+
+.tooltipText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.tooltipWrapper {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.tooltip {
+  position: relative;
+  left: -50%;
+  margin: 0 auto;
+  padding: 3px 16px;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.87);
+  color: white;
+  white-space: normal;
+  word-break: break-word;
+  z-index: 1;
+}

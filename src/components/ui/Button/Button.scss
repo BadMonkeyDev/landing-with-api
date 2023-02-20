@@ -1,0 +1,28 @@
+@import "./src/assets/styles/variables";
+@import "./src/assets/styles/mixins";
+
+.Button {
+    border: none;
+    border-radius: 80px;
+    color: $black;
+    cursor: pointer;
+    padding: 4px 23px;
+
+    &.yellow {
+        background-color: $yellow;
+        &:hover:not(:disabled){
+            background-color: $light-yellow;
+        }
+        &:disabled {
+            background-color: $gray;
+            color: $white;
+            cursor: not-allowed;
+        }
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        color: white;
+        cursor: not-allowed;
+    }
+}
