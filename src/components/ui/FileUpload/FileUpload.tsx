@@ -4,6 +4,8 @@ import UploadButton from './UploadButton/UploadButton';
 import UploadText from './UploadText/UploadText';
 import TextField from '@mui/material/TextField';
 
+import {ResizeImage} from "../../../helper/ResizeImage";
+
 interface IImageValidationRules {
     allowedTypes: string[];
     maxFileSize: number;
@@ -31,11 +33,10 @@ export const FileUpload = ({
     const [fileName, setFileName] = useState('');
     const [isValid, setIsValid] = useState(false)
 
-    const handleFileSelected = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileSelected = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = event.target.files && event.target.files[0];
         if (selectedFile) {
             setFileName(selectedFile.name.split('.')[0]);
-
             if (
                 !imageValidationRules.allowedTypes.includes(selectedFile.type) ||
                 selectedFile.size > imageValidationRules.maxFileSize
@@ -44,7 +45,9 @@ export const FileUpload = ({
                 setIsValid(false)
             } else {
                 const image = new Image();
-                image.src = URL.createObjectURL(selectedFile);
+                const resizedImage = await ResizeImage(selectedFile, 70, 70, 0.7)
+                image.src = URL.createObjectURL(resizedImage);
+
                 image.onload = () => {
                     if (image.width !== imageValidationRules.minResolution.width || image.height !== imageValidationRules.minResolution.height) {
                         setIsError(true);
