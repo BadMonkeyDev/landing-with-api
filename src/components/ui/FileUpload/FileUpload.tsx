@@ -19,7 +19,7 @@ interface IFileUploadProps {
 }
 
 const DEFAULT_IMAGE_VALIDATION_RULES: IImageValidationRules = {
-    allowedTypes: ['image/jpeg', 'image/png', 'image/gif'],
+    allowedTypes: ['image/jpeg'],
     maxFileSize: 5 * 1024 * 1024,
     minResolution: { width: 70, height: 70 },
 };
