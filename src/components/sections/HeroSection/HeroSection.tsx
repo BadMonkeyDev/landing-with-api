@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './HeroSection.scss'
 
 //@ts-ignore
-import imageSrc from '../../../assets/images/background-image.jpeg'
+import imageSrc from '../../../assets/images/background-image.jpg'
 
 import Button from "../../ui/Button/Button";
 
@@ -22,16 +22,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({signupRef}) => {
         });
     }
 
-
-
-    console.log(backgroundImage)
-
     const heroStyles = {
         backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)) ${backgroundImage && `, url('${backgroundImage}')`}`,
         backgroundSize: "cover"
     }
-
-    console.log(heroStyles)
 
     return (
         <div
