@@ -1,8 +1,6 @@
 {
   "short_name": "BadMonkey",
   "name": "BadMonkey - Experienced Web Developer",
-  "icons": [
-  ],
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f8f8f8",
