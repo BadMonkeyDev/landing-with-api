@@ -45,8 +45,9 @@ export const FileUpload = ({
                 setIsValid(false)
             } else {
                 const image = new Image();
-                const resizedImage = await ResizeImage(selectedFile, 70, 70, 0.7)
-                image.src = URL.createObjectURL(resizedImage);
+                const resizedImage = await ResizeImage(selectedFile, 70, 70, 1)
+                //@ts-ignore
+                image.src = resizedImage.preview;
 
                 image.onload = () => {
                     if (image.width !== imageValidationRules.minResolution.width || image.height !== imageValidationRules.minResolution.height) {
