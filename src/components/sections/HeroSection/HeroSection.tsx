@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './HeroSection.scss'
 
 //@ts-ignore
-import imageSrc from '../../../assets/images/background-image.jpeg'
+import imageSrc from '../../../assets/images/background-image.jpg'
 
 import Button from "../../ui/Button/Button";
 
@@ -16,9 +16,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({signupRef}) => {
     const [backgroundImage, setBackgroundImage] = useState<File>()
 
     if (!backgroundImage) {
-        ResizeImage(imageSrc, 1170, 650, 0.7, 'file').then(r => {
+        ResizeImage(imageSrc, 1170, 650, 0.7, 'base64').then(r => {
+            console.log(r)
             //@ts-ignore
             setBackgroundImage(r.preview)
+
         });
     }
 
