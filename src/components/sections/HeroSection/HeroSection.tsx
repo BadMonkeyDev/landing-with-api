@@ -1,36 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './HeroSection.scss'
 
-//@ts-ignore
-import imageSrc from '../../../assets/images/background-image.jpg'
-
 import Button from "../../ui/Button/Button";
-
-import {ResizeImage} from "../../../helper/ResizeImage";
 
 interface HeroSectionProps {
     signupRef: React.RefObject<HTMLElement>;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({signupRef}) => {
-    const [backgroundImage, setBackgroundImage] = useState<File>()
-
-    if (!backgroundImage) {
-        ResizeImage(imageSrc, 1170, 650, 0.7, 'file').then(r => {
-            //@ts-ignore
-            setBackgroundImage(r.preview)
-        });
-    }
-
-    const heroStyles = {
-        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)) ${backgroundImage && `, url('${backgroundImage}')`}`,
-        backgroundSize: "cover"
-    }
-
     return (
         <div
             className={'app-hero-section container'}
-            style={heroStyles}
         >
             <div className={'hero-content'}>
                 <h1 className={'text-h1'}>Test assignment for front-end developer</h1>
