@@ -7,6 +7,19 @@ export const muiTheme = createTheme({
         fontFamily: 'Nunito, sans-serif',
     },
     components: {
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    [`&.${'MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline'}`]: {
+                        borderColor: styles.grey,
+                        borderWidth: 1
+                    },
+                    [`&.${'MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline'}`]: {
+                        borderWidth: 2
+                    }
+                }
+            }
+        },
         MuiFormHelperText: {
             styleOverrides: {
                 root: {
@@ -17,7 +30,10 @@ export const muiTheme = createTheme({
         MuiFormLabel: {
             styleOverrides: {
                 root: {
-                    color: styles.grey
+                    color: styles.grey,
+                    [`&.${'Mui-focused'}`]: {
+                        color: styles.grey,
+                    },
                 }
             }
         },
